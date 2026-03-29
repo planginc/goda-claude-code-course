@@ -9,7 +9,7 @@ Course materials and work produced while taking Goda Go's Claude Code course. Ca
 
 ## Rules
 - Use this folder for all course-related exercises and experiments
-- Link notes to this project's Convex project_id (to be set after Convex entry is created)
+- Link all notes and tasks to Convex project_id: `kd773pd2h1rbc3wa2fj22rdphd83trzp`
 
 ## Things to Avoid
 - Nothing known yet
