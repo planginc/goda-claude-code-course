@@ -12,7 +12,7 @@ The audience is non-technical professionals (consultants, project managers, free
 ## Tech Stack
 
 - **Language**: Vanilla HTML, CSS, JavaScript - no frameworks, no build step
-- **Architecture**: Single self-contained HTML file (`claude-code-course.html`)
+- **Architecture**: Single self-contained HTML file (`index.html`, formerly `index.html`)
 - **Fonts**: Google Fonts CDN (Fraunces, Inter, JetBrains Mono)
 - **State/Storage**: localStorage (browser-side, key: `courseProgress`)
 - **Database**: None - all content is embedded in the JS `courseData` object
@@ -45,7 +45,7 @@ The audience is non-technical professionals (consultants, project managers, free
 ## Architecture
 
 ### Single-File SPA
-Everything lives in `claude-code-course.html`:
+Everything lives in `index.html`:
 - CSS styles (embedded in `<style>`)
 - Course content (in the `courseData` JavaScript object)
 - Rendering engine and navigation (in `<script>`)
@@ -95,7 +95,7 @@ Section types: `text`, `heading`, `list`, `code`
 - Target: Netlify or GitHub Pages
 - Single static file, no build step
 - Audience: Go2Go Skool community members (non-technical, accessing via URL)
-- To deploy: upload `claude-code-course.html` to static hosting. No build commands, no dependencies to install.
+- To deploy: upload `index.html` to static hosting. No build commands, no dependencies to install.
 
 ## Things to Avoid - Known Pitfalls
 
@@ -115,7 +115,7 @@ The source .docx converted to markdown has quirks that caused bugs in earlier bu
 ```bash
 node -e "
 const fs = require('fs');
-const html = fs.readFileSync('claude-code-course.html', 'utf8');
+const html = fs.readFileSync('index.html', 'utf8');
 const match = html.match(/<script>([\s\S]*?)<\/script>/);
 try { new Function(match[1]); console.log('PASS'); } catch(e) { console.log('FAIL:', e.message); }
 "
@@ -132,7 +132,7 @@ try { new Function(match[1]); console.log('PASS'); } catch(e) { console.log('FAI
 ## File Structure
 
 ```
-claude-code-course.html       -- The complete interactive course (single file, ~680KB)
+index.html       -- The complete interactive course (single file, ~680KB)
 Claude Code Course.docx       -- Original source document (189 pages)
 CLAUDE.md                     -- This file (project conventions for Claude)
 README.md                     -- Project overview and documentation
